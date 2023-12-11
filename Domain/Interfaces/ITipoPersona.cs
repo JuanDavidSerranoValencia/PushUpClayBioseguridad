@@ -9,6 +9,7 @@ namespace Domain.Interfaces
 { 
     public interface ITipoPersona:IGeneric<TipoPersona> 
     {
-
+        Task<IEnumerable<object>> EmpleadosSeguridad ();
+        Task<IEnumerable<object>> Vigilantes ();
     }
 } 
