@@ -12,7 +12,14 @@ namespace Persistence.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Pais> builder)
         {
+            builder.HasKey(e => e.IdPais).HasName("PRIMARY");
 
+            builder.ToTable("pais");
+
+            builder.Property(e => e.IdPais)
+                .ValueGeneratedNever()
+                .HasColumnName("Id_Pais");
+            builder.Property(e => e.NombrePais).HasMaxLength(200);
         }
     }
 }
